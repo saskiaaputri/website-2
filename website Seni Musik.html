@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ekstrakurikuler Seni Musik SRMA 24 Kediri</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+  background:
+    radial-gradient(circle at top left,#7c3aed 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#06b6d4 0%,transparent 30%),
+    #030712;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
+}
+
+/* GLOW */
+.glow{
+  text-shadow:
+  0 0 10px #a855f7,
+  0 0 25px #06b6d4,
+  0 0 40px #a855f7;
+}
+
+/* FLOAT */
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0px);}
+}
+.float{
+  animation: float 4s ease-in-out infinite;
+}
+
+/* CARD */
+.card{
+  transition:0.3s;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:
+    0 0 20px #7c3aed,
+    0 0 40px #06b6d4;
+}
+
+/* HERO */
+.hero-bg{
+  background:
+  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=70&w=1200&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  animation: zoom 20s infinite alternate;
+}
+
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* BUTTON */
+button,a{
+  transition:0.3s;
+}
+button:hover,a:hover{
+  transform:scale(1.05);
+  filter:brightness(1.2);
+}
+
+/* KEYBOARD */
+.key{
+  width:70px;
+  height:90px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.2s;
+  backdrop-filter: blur(10px);
+  box-shadow:0 0 10px rgba(124,58,237,0.3);
+}
+
+.key:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #7c3aed, 0 0 40px #06b6d4;
+}
+
+.key.active{
+  background:#7c3aed;
+  transform:scale(0.95);
+}
+
+/* SCROLL */
+::-webkit-scrollbar{
+  width:8px;
+}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(#7c3aed,#06b6d4);
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="fixed w-full z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-2xl font-bold glow float">🎵 Seni Musik</h1>
+
+    <ul class="hidden md:flex gap-8">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#daftar">Daftar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-6">
+
+  <div class="reveal active">
+
+    <h1 class="text-5xl md:text-7xl font-bold glow float mb-6">
+      EKSTRAKURIKULER <br> SENI MUSIK
+    </h1>
+
+    <p class="text-lg md:text-2xl text-gray-200 mb-6">
+      Tekan A S D F G atau klik tombol 🎹
+    </p>
+
+    <!-- BUTTON -->
+    <button onclick="playPiano()" class="bg-pink-600 px-6 py-3 rounded-full font-bold mb-6">
+      🎹 Bunyi Piano
+    </button>
+
+    <!-- KEYBOARD -->
+    <div class="flex justify-center gap-3 flex-wrap mt-4">
+
+      <button onclick="playKey('A')" class="key">A</button>
+      <button onclick="playKey('S')" class="key">S</button>
+      <button onclick="playKey('D')" class="key">D</button>
+      <button onclick="playKey('F')" class="key">F</button>
+      <button onclick="playKey('G')" class="key">G</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" class="reveal py-24 px-6">
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+    <img class="rounded-3xl float shadow-2xl"
+    src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=70&w=900&auto=format&fit=crop"/>
+
+    <div class="card p-8">
+      <h2 class="text-4xl font-bold glow mb-6">Tentang Ekskul</h2>
+      <p class="text-gray-300">
+        Ekskul Seni Musik adalah tempat belajar alat musik, vokal, dan tampil percaya diri di panggung.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- KEGIATAN -->
+<section id="kegiatan" class="reveal py-24 px-6">
+
+  <h2 class="text-center text-4xl font-bold glow mb-14">Kegiatan 🔥</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="card p-8 text-center float">🎹 Pianika</div>
+    <div class="card p-8 text-center float">🎤 Vokal</div>
+    <div class="card p-8 text-center float">🏆 Lomba</div>
+
+  </div>
+
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="reveal py-24 px-6">
+
+  <h2 class="text-center text-4xl font-bold glow mb-10">Galeri 📸</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <img class="rounded-2xl float" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900">
+    <img class="rounded-2xl float" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=900">
+    <img class="rounded-2xl float" src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=900">
+
+  </div>
+
+</section>
+
+<!-- DAFTAR -->
+<section id="daftar" class="reveal py-24 px-6">
+
+  <div class="max-w-3xl mx-auto card p-10">
+
+    <h2 class="text-3xl font-bold text-center glow mb-8">Daftar Ekskul</h2>
+
+    <input class="w-full p-4 mb-4 rounded-xl bg-black/40 border" placeholder="Nama"/>
+    <input class="w-full p-4 mb-4 rounded-xl bg-black/40 border" placeholder="Kelas"/>
+
+    <button class="w-full bg-purple-600 p-4 rounded-xl font-bold">
+      Kirim 🚀
+    </button>
+
+  </div>
+
+</section>
+
+<script>
+
+/* reveal */
+const reveals=document.querySelectorAll(".reveal");
+function show(){
+  const t=window.innerHeight*0.85;
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<t){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll",show);
+show();
+
+/* piano notes */
+const notes = {
+  A: 261.63,
+  S: 293.66,
+  D: 329.63,
+  F: 392.00,
+  G: 440.00
+};
+
+const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playNote(freq){
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.type="sine";
+  osc.frequency.value=freq;
+
+  gain.gain.setValueAtTime(0.3, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1);
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start();
+  osc.stop(ctx.currentTime + 1);
+}
+
+function playKey(key){
+  const k = key.toUpperCase();
+  if(notes[k]){
+    playNote(notes[k]);
+
+    // 📳 VIBRATION HP
+    if(navigator.vibrate){
+      navigator.vibrate(50);
+    }
+
+    animateKey(k);
+  }
+}
+
+function animateKey(key){
+  document.querySelectorAll(".key").forEach(b=>{
+    if(b.innerText === key){
+      b.classList.add("active");
+      setTimeout(()=>b.classList.remove("active"),150);
+    }
+  });
+}
+
+/* keyboard input */
+document.addEventListener("keydown",(e)=>{
+  playKey(e.key);
+});
+
+/* piano button */
+function playPiano(){
+  if(navigator.vibrate){
+    navigator.vibrate([80,30,80]);
+  }
+
+  playKey("A");
+  setTimeout(()=>playKey("S"),150);
+  setTimeout(()=>playKey("D"),300);
+  setTimeout(()=>playKey("F"),450);
+}
+
+</script>
+
+</body>
+</html>
